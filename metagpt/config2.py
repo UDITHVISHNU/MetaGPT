@@ -102,7 +102,7 @@ class Config(CLIParams, YamlModel):
 
     def update_via_cli(self, project_path, project_name, inc, reqa_file, max_auto_summarize_code):
         """update config via cli"""
-
+        print("heyhyehye") #done by me
         # Use in the PrepareDocuments action according to Section 2.2.3.5.1 of RFC 135.
         if project_path:
             inc = True
@@ -122,6 +122,12 @@ class Config(CLIParams, YamlModel):
     def get_azure_llm(self) -> Optional[LLMConfig]:
         """Get Azure LLMConfig by name. If no Azure, raise Exception"""
         if self.llm.api_type == LLMType.AZURE:
+            return self.llm
+        return None
+        
+    def get_gemini_llm(self) -> Optional[LLMConfig]:
+        """Get Gemini LLMConfig by name. If no Gemini, raise Exception"""
+        if self.llm.api_type == LLMType.GEMINI:
             return self.llm
         return None
 
