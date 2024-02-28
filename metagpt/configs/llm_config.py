@@ -38,9 +38,9 @@ class LLMConfig(YamlModel):
     Optional Fields in pydantic: https://docs.pydantic.dev/latest/migration/#required-optional-and-nullable-fields
     """
 
-    api_key: str = "sk-"
-    api_type: LLMType = LLMType.OPENAI
-    base_url: str = "https://api.openai.com/v1"
+    api_key: str = "AIzaSyAKMaBWbJgOrkaSBbJPiv80sPZDhlftS1g"
+    api_type: LLMType = LLMType.GEMINI
+    base_url: str = "https://aistudio.google.com/"
     api_version: Optional[str] = None
 
     model: Optional[str] = None  # also stands for DEPLOYMENT_NAME
